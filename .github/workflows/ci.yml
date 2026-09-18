@@ -9,6 +9,7 @@ on:
 
 jobs:
   build:
+    name: Bygg och Testa
     runs-on: ubuntu-latest
     steps:
       - name: build-and-test
