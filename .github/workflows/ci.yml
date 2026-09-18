@@ -38,6 +38,8 @@ jobs:
         - name: dump github context
           run: |
             echo "Startad av $STARTED_BY — händelse: $ACTION — gren: $BRANCH"
+            echo "Startad av $STARTED_BY — händelse: $ACTION — gren: $BRANCH" > $GITHUB_STEP_SUMMARY
+            
         
 
        
