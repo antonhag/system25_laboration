@@ -32,8 +32,8 @@ jobs:
       runs-on: ubuntu-latest
       env: 
         STARTED_BY: ${{ github.actor }}
-        ACTION: ${{ github.action }}
-        BRANCH: ${{ github.base_ref }}
+        ACTION: ${{ github.event_name }}
+        BRANCH: ${{ github.ref_name }}
       steps:
         - name: dump github context
           run: |
