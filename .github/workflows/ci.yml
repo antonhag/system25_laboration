@@ -26,6 +26,19 @@ jobs:
         run: dotnet build --no-restore --configuration ${{ env.BUILD_CONFIGURATION }}
       - name: test
         run: dotnet test --no-build --configuration ${{ env.BUILD_CONFIGURATION }}
+        
+  github_context:    
+      name: Github context
+      runs-on: ubuntu-latest
+      env: 
+        STARTED_BY: ${{ github.actor }}
+        ACTION: ${{ github.action }}
+        BRANCH: ${{ github.base_ref }}
+      steps:
+        - name: dump github context
+          run: |
+            echo "Startad av $STARTED_BY — händelse: $ACTION — gren: $BRANCH"
+        
 
        
      
